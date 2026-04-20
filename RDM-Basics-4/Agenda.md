@@ -220,15 +220,26 @@ RO-Crate for packaging artifacts. Both resurface here as operational tools.
 Participant task list:
 
 1. Log in to the NFDI4ING Jupyter Service and launch a fresh Python notebook.
-2. `pip install "awesome-sim==<pinned-version>"` using the version tag shown
-   in theory block 5.
-3. Run the minimal example from `awesome-sim/examples/` inside the notebook;
-   inspect the output.
-4. In a second cell, deliberately break reusability: change the pinned version
-   to `awesome-sim` (unpinned) or uninstall a dependency, and observe.
-5. In the remaining time: fork `awesome-sim` on GitHub, and in the web UI add
-   a `LICENSE` file (GitHub's license-template picker — note the SPDX id) and
-   a `CITATION.cff`. Commit.
+2. Install the version pinned for this lecture:
+   `pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.0.0"`.
+   Notice this pins a specific git tag — a concrete example of FAIR4RS **R2**
+   (qualified reference to another software at a specific version).
+3. In a fresh cell, run:
+   ```python
+   from awesome_sim import HeatDiffusion2D
+   from awesome_sim.viz import plot_snapshot
+   sim = HeatDiffusion2D(nx=200, ny=200, alpha=1e-2, dt=5e-5)
+   sim.run(500)
+   plot_snapshot(sim.u, "out.png", title="t = %.4f" % sim.t)
+   ```
+   and inspect the resulting heatmap. (The full 1–2 minute
+   `examples/minimal_example.py` can also be run if time permits.)
+4. Deliberately break reusability: in a clone of the repo, remove the upper
+   version bound on `numpy` in `pyproject.toml`, or delete the `LICENSE`.
+   Reflect on which tools would complain and when.
+5. In the remaining time: fork `awesome-sim` on GitHub and add one thing you
+   think would improve its FAIR4RS coverage (a `CONTRIBUTING.md`, a
+   `Dockerfile`, an extended `CHANGELOG` entry, …). Commit.
 
 **Reflection prompt:** *what was the smallest thing that would have broken
 this reuse — a missing license, an unpinned dep, no example, a broken install
@@ -268,17 +279,25 @@ command? That is your first priority in your own repos.*
 
 Before the session, the lecturer must have ready:
 
-- [ ] `awesome-sim` GitHub repository, public, with:
-  - [ ] At least two tagged releases (e.g., `v0.1.0`, `v1.0.0`), each with a
-        Zenodo DOI via the GitHub ↔ Zenodo integration
-  - [ ] `README.md` with install + minimal usage
-  - [ ] `LICENSE` file using an SPDX identifier (MIT)
-  - [ ] `CITATION.cff` (valid against the CFF schema)
-  - [ ] `codemeta.json` referencing ORCID authors and PyPI dependencies
-  - [ ] `pyproject.toml` with pinned dependencies
-  - [ ] A minimal GitHub Actions workflow (install + run one example)
-  - [ ] A published PyPI release (so `pip install awesome-sim` works in the
-        Jupyter practical)
+- [x] **`awesome-sim` GitHub repository**, public, live at
+      <https://github.com/VasiliySeibert/awesome-sim>, with:
+  - [x] Two tagged releases `v0.1.0` and `v1.0.0` (both visible on the
+        [Releases page](https://github.com/VasiliySeibert/awesome-sim/releases))
+  - [ ] Zenodo DOIs minted via the GitHub ↔ Zenodo integration *(manual step —
+        see "Zenodo deposit — manual follow-up" below)*
+  - [x] `README.md` with install + minimal usage
+  - [x] `LICENSE` file using the SPDX identifier `MIT`
+  - [x] `CITATION.cff` (CFF 1.2.0) — GitHub's "Cite this repository" button
+        renders it
+  - [x] `codemeta.json` (CodeMeta 2.0) referencing ORCID author and PyPI
+        dependencies
+  - [x] `pyproject.toml` with pinned dependencies
+        (`numpy`, `matplotlib`, `pillow`)
+  - [x] GitHub Actions CI (Python 3.11 + 3.12) running tests and a headless
+        smoke example
+  - Install path for Practical 3:
+        `pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.0.0"`
+        (no PyPI release — the git-tag install demonstrates R2 directly)
 - [ ] Verified Betty Research Engine access; confirmed the "Dumux" query
       returns results sortable by citation count and exportable as `.json`
 - [ ] Verified at least one engineering term URI exists on the NFDI4ING
@@ -287,11 +306,29 @@ Before the session, the lecturer must have ready:
 - [ ] Confirmed Jupyter Service account provisioning flow for participants
       (pre-created accounts vs self-signup, installation policy)
 
+## Zenodo deposit — manual follow-up
+
+The GitHub ↔ Zenodo integration requires one-time manual setup that a script
+cannot do on the user's behalf:
+
+1. Visit <https://zenodo.org/account/settings/github/> and sign in with your
+   GitHub account.
+2. In the list of repositories, toggle **`VasiliySeibert/awesome-sim`** ON.
+3. On GitHub, re-publish the `v1.0.0` release (Releases → Edit → Update
+   release) so Zenodo picks up the webhook. The release from tag `v0.1.0` can
+   be re-published the same way; Zenodo will mint a concept DOI (all-versions)
+   plus per-version DOIs.
+4. Once Zenodo issues the DOIs, patch `CITATION.cff` and `codemeta.json` with
+   the real DOIs (replace the placeholder block in `CITATION.cff` —
+   `type: doi` — and add `identifier` entries in `codemeta.json`), then push a
+   follow-up commit.
+
 ## Open items
 
-- Decide the final name and GitHub org/account that will host the sample repo.
 - Confirm which specific domain terms in the Terminology Service are
   appropriate for Practical 2 (dependent on participant audience).
 - Confirm participant login flow for the Jupyter Service on lecture day.
 - Confirm whether a backup plan is needed if any NFDI4ING service is
   unavailable during the session (fall-back: show recorded walkthroughs).
+- Once Zenodo DOIs are minted, push the follow-up commit to `awesome-sim`
+  replacing the DOI placeholders in `CITATION.cff` and `codemeta.json`.

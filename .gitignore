@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# Nested standalone repositories (tracked as their own repos on GitHub).
+# Ignore the working tree so the outer RDM-Basics repo does not accidentally
+# swallow their .git directory or commit their source here.
+RDM-Basics-4/awesome-sim/
