@@ -6,8 +6,8 @@ Pad: https://pad.gwdg.de/DfrrmRISQsCzwTX1qX_Nlw?view
 ### 2026-04-15
 
 *Agenda brainstormen*
-* [ ] Brainstorm Agenda with Claude..
-    * [ ] (Agenda.md) Please familiarize yourself with the current project. Our job is to Design and conceptualize a 90 minutes (50 slides) lecture regarding research data management. This lecture will continue the already held lectures, which they are 3 of. You can find them in the folder RDM-Basics-1-3. The fourth lecture is going to be about research software. I want to give the audience a practical introduction into what's important when you are dealing with research software and what are the things to look out for. For the first step, I want to come up with an agenda together with you. I was thinking that we could use the fair4rs reference as a blueprint for an agenda, but fine tune it a little. 
+* [x] Create Agenda with Claude..
+    * [x] (Agenda.md) Please familiarize yourself with the current project. Our job is to Design and conceptualize a 90 minutes (50 slides) lecture regarding research data management. This lecture will continue the already held lectures, which they are 3 of. You can find them in the folder RDM-Basics-1-3. The fourth lecture is going to be about research software. I want to give the audience a practical introduction into what's important when you are dealing with research software and what are the things to look out for. For the first step, I want to come up with an agenda together with you. I was thinking that we could use the fair4rs reference as a blueprint for an agenda, but fine tune it a little. 
     
     Also, the lectures are being held in the context of nfdi4ing (the associated project). In betty-workflow you will find services which we can use for 3 practical sessions. I was thinking the lecture could have 3 x 15 min theoretical input and 3 x 15 minute practical session, building on top of each other. 
 
