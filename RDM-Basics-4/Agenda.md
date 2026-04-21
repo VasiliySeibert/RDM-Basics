@@ -6,7 +6,15 @@
 
 ---
 
-## Abstract
+## 0 · Introduction (5 min, ~5 slides)
+
+Welcome, framing and a short recap of where the series has taken us so far:
+the FAIR principles for data (Lecture 1), planning and SMP authoring in RDMO
+(Lecture 2), and metadata & semantics for datasets (Lecture 3). The pivot:
+*software behaves differently from data — it executes, depends on things,
+versions, breaks.* Hence **FAIR4RS**, a software-specific refinement of FAIR.
+Close the opening by introducing the two running examples (`awesome-sim` and
+DuMux) and the alternating theory/practical rhythm of the session.
 
 Lectures 1–3 established how to manage research **data** in a FAIR way:
 motivation and lifecycle, how to plan with RDMO, and how to describe data with
@@ -26,7 +34,7 @@ The session alternates **3 × 15 min theory** blocks (aligned to FAIR4RS) with
 workflow. The practicals build on each other: first *find* software, then
 *describe* it, then *run and sustain* it.
 
-## Learning objectives
+### Learning objectives
 
 By the end of this session, participants will be able to:
 
@@ -41,7 +49,7 @@ By the end of this session, participants will be able to:
    the Betty workflow (Research Engine, Terminology Service, Jupyter Service,
    RDMO, Coscine, ing.grid).
 
-## Running example
+### Used examples
 
 Two artifacts thread through the lecture:
 
@@ -59,7 +67,7 @@ one of these two repos.
 
 ---
 
-## Agenda at a glance
+### Agenda at a glance
 
 | # | Time          | Block                                                                   | Format             | NFDI4ING service          | FAIR4RS anchor |
 |---|---------------|-------------------------------------------------------------------------|--------------------|---------------------------|----------------|
@@ -76,15 +84,6 @@ Total = **90 min**.
 
 ---
 
-## 0 · Opening & recap (3 min, ~3 slides)
-
-Welcome, framing and a short recap of where the series has taken us so far:
-the FAIR principles for data (Lecture 1), planning and SMP authoring in RDMO
-(Lecture 2), and metadata & semantics for datasets (Lecture 3). The pivot:
-*software behaves differently from data — it executes, depends on things,
-versions, breaks.* Hence **FAIR4RS**, a software-specific refinement of FAIR.
-Close the opening by introducing the two running examples (`awesome-sim` and
-DuMux) and the alternating theory/practical rhythm of the session.
 
 ## 1 · Theory — Findable & Accessible (13 min, ~7 slides)
 
