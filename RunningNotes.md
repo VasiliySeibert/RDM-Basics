@@ -28,11 +28,14 @@ Pad: https://pad.gwdg.de/DfrrmRISQsCzwTX1qX_Nlw?view
     * [x] confirm gh auth status shows you logged in
     * [x] Your identity for CITATION.cff — full name as you'd like it cited, ORCID iD (format 0000-0000-0000-0000), affiliation, and a contact email (can be the one on file or a throwaway). 
 * [x] Let claude cook
-* [x] Inspect the result
-    * [ ] Proper Readme, mathematical model?
-    * [ ] What makes it FAIR? Explicit Explainations
-    * [ ] Open it on jupyter hub (badge?), does the pip import work?
-    * [ ] How does it map to RDM-Basics-4, create a .md file that makes this clear.
+* [ ] Inspect the result
+    * [x] Proper Readme, mathematical model?
+    * [x] What makes it FAIR? Explicit Explainations
+    * [x] Open it on jupyter hub (badge?), does the pip import work?
+    * [ ] How does it map to RDM-Basics-4, ~~create a .md file that makes this clear~~ 
+        [comment] : already clear in Agenda.md
+* [x] manual step
+    * [x] One manual step remains (outside my reach): Zenodo integration for the DOI. Steps documented in RDM-Basics-4/Agenda.md
 
 --> Now you have a Repository that you can use as an example throughout the course.
 

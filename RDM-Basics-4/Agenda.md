@@ -221,7 +221,7 @@ Participant task list:
 
 1. Log in to the NFDI4ING Jupyter Service and launch a fresh Python notebook.
 2. Install the version pinned for this lecture:
-   `pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.0.0"`.
+   `pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"`.
    Notice this pins a specific git tag — a concrete example of FAIR4RS **R2**
    (qualified reference to another software at a specific version).
 3. In a fresh cell, run:
@@ -281,10 +281,12 @@ Before the session, the lecturer must have ready:
 
 - [x] **`awesome-sim` GitHub repository**, public, live at
       <https://github.com/VasiliySeibert/awesome-sim>, with:
-  - [x] Two tagged releases `v0.1.0` and `v1.0.0` (both visible on the
-        [Releases page](https://github.com/VasiliySeibert/awesome-sim/releases))
-  - [ ] Zenodo DOIs minted via the GitHub ↔ Zenodo integration *(manual step —
-        see "Zenodo deposit — manual follow-up" below)*
+  - [x] Three tagged releases `v0.1.0`, `v1.0.0`, `v1.1.0` (all visible on
+        the [Releases page](https://github.com/VasiliySeibert/awesome-sim/releases))
+  - [x] Zenodo DOIs minted via the GitHub ↔ Zenodo integration:
+        concept DOI [`10.5281/zenodo.19677548`](https://doi.org/10.5281/zenodo.19677548),
+        version DOIs [v1.1.0](https://doi.org/10.5281/zenodo.19677552) and
+        [v1.0.0](https://doi.org/10.5281/zenodo.19677549)
   - [x] `README.md` with install + minimal usage
   - [x] `LICENSE` file using the SPDX identifier `MIT`
   - [x] `CITATION.cff` (CFF 1.2.0) — GitHub's "Cite this repository" button
@@ -296,7 +298,7 @@ Before the session, the lecturer must have ready:
   - [x] GitHub Actions CI (Python 3.11 + 3.12) running tests and a headless
         smoke example
   - Install path for Practical 3:
-        `pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.0.0"`
+        `pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"`
         (no PyPI release — the git-tag install demonstrates R2 directly)
 - [ ] Verified Betty Research Engine access; confirmed the "Dumux" query
       returns results sortable by citation count and exportable as `.json`
@@ -306,22 +308,24 @@ Before the session, the lecturer must have ready:
 - [ ] Confirmed Jupyter Service account provisioning flow for participants
       (pre-created accounts vs self-signup, installation policy)
 
-## Zenodo deposit — manual follow-up
+## Zenodo archival (done)
 
-The GitHub ↔ Zenodo integration requires one-time manual setup that a script
-cannot do on the user's behalf:
+The GitHub ↔ Zenodo integration is enabled and both `v1.0.0` and `v1.1.0`
+are archived. Zenodo issued the following DOIs, already recorded in the
+repo's `CITATION.cff`, `codemeta.json`, and README badge:
 
-1. Visit <https://zenodo.org/account/settings/github/> and sign in with your
-   GitHub account.
-2. In the list of repositories, toggle **`VasiliySeibert/awesome-sim`** ON.
-3. On GitHub, re-publish the `v1.0.0` release (Releases → Edit → Update
-   release) so Zenodo picks up the webhook. The release from tag `v0.1.0` can
-   be re-published the same way; Zenodo will mint a concept DOI (all-versions)
-   plus per-version DOIs.
-4. Once Zenodo issues the DOIs, patch `CITATION.cff` and `codemeta.json` with
-   the real DOIs (replace the placeholder block in `CITATION.cff` —
-   `type: doi` — and add `identifier` entries in `codemeta.json`), then push a
-   follow-up commit.
+| Level                | DOI                                                                                            |
+|----------------------|------------------------------------------------------------------------------------------------|
+| Concept (all versions) | [10.5281/zenodo.19677548](https://doi.org/10.5281/zenodo.19677548)                           |
+| v1.1.0 (pinned by lecture) | [10.5281/zenodo.19677552](https://doi.org/10.5281/zenodo.19677552)                       |
+| v1.0.0 (historical)  | [10.5281/zenodo.19677549](https://doi.org/10.5281/zenodo.19677549)                             |
+
+**Pedagogical handle for lecture:** Block 1 (Findable) can demo these three
+DOIs side-by-side — one concept, two versions, all resolvable — as a direct
+instantiation of FAIR4RS **F1.1** (component granularity) and **F1.2**
+(version granularity). The concept DOI always redirects to the latest, so
+students can compare `doi.org/10.5281/zenodo.19677548` (latest) vs
+`doi.org/10.5281/zenodo.19677549` (v1.0.0) in two browser tabs.
 
 ## Open items
 
@@ -330,5 +334,3 @@ cannot do on the user's behalf:
 - Confirm participant login flow for the Jupyter Service on lecture day.
 - Confirm whether a backup plan is needed if any NFDI4ING service is
   unavailable during the session (fall-back: show recorded walkthroughs).
-- Once Zenodo DOIs are minted, push the follow-up commit to `awesome-sim`
-  replacing the DOI placeholders in `CITATION.cff` and `codemeta.json`.
