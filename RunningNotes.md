@@ -7,7 +7,22 @@ Pad: https://pad.gwdg.de/DfrrmRISQsCzwTX1qX_Nlw?view
 
 
 
-*Generate the slides*
+*Go through the slides: 1) presenters notes and 2) feedback on slides*
+* [ ] navigation at the side (so you can navigate)
+* [ ] foliendesign verbessern, logos
+* [ ] One new slide between R2 and R3: "CI/CD as FAIR4RS glue"
+    Left column: the table above (which behaviour → which
+    letter). Right column: the real ci.yml with callouts annotating which steps satisfy which principle. This is the
+    highest-leverage addition and fits the "principle → in practice" rhythm you already have.
+* [ ] introducing vasiliy seibert (introduction slide with image, linked in, etc)
+* [ ] (iter) go through each slide ...
+    * [ ] what do you want to say on this slide?
+    * [ ] how can it be improved with text, images, demonstration?
+    * [ ] create, integrate into presenters-notes.md
+    * [ ] IF ÜBUNG:
+        * [ ] try it yourself. does it work? 
+        * [ ] ist es modular? betty module?
+
 
 *Generate the slides*
 * [x] (try) Make Claude create .html and host in as a github page
